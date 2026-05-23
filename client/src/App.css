@@ -1,0 +1,321 @@
+.app {
+  min-height: 100vh;
+}
+
+.app__main {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 8, 14, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.navbar__logo {
+  font-size: 1.8rem;
+}
+
+.navbar__brand h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.navbar__brand p {
+  margin: 0.15rem 0 0;
+  color: rgba(245, 241, 232, 0.65);
+  font-size: 0.9rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.navbar__links a {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  color: rgba(245, 241, 232, 0.75);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar__links a:hover,
+.navbar__links a.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.page-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2,
+.page h2 {
+  margin: 0 0 0.35rem;
+  font-size: 2rem;
+}
+
+.page-header p,
+.muted {
+  color: rgba(245, 241, 232, 0.65);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.movie-card img,
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-poster--fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(255, 107, 74, 0.25), rgba(124, 92, 255, 0.25));
+  color: rgba(245, 241, 232, 0.9);
+}
+
+.movie-poster__icon {
+  font-size: 2rem;
+}
+
+.movie-poster__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.movie-detail__poster {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.movie-card__body {
+  padding: 1rem;
+}
+
+.movie-card__meta {
+  color: #ffb089;
+  font-size: 0.9rem;
+}
+
+.movie-card__description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgba(245, 241, 232, 0.75);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #ffb089;
+}
+
+.movie-detail {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.movie-detail img,
+.movie-detail__poster {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.movie-detail__meta {
+  color: #ffb089;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.panel,
+.theater-card,
+.review-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.theater-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.theater-list,
+.theater-card__movies {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.theater-list li,
+.theater-card__movies li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.theater-card__address {
+  color: rgba(245, 241, 232, 0.7);
+}
+
+.review-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.review-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-card__org {
+  display: block;
+  color: rgba(245, 241, 232, 0.6);
+  font-size: 0.9rem;
+}
+
+.review-card__score {
+  color: #ffb089;
+  font-weight: 700;
+}
+
+.review-card__form label {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.review-card__form input,
+.review-card__form textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: #f5f1e8;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge--on {
+  background: rgba(76, 201, 138, 0.18);
+  color: #8ef0b8;
+}
+
+.badge--off {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(245, 241, 232, 0.65);
+}
+
+.status,
+.error {
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.status {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.error {
+  background: rgba(255, 77, 109, 0.12);
+  color: #ffb3c1;
+}
+
+@media (max-width: 720px) {
+  .navbar,
+  .page-header,
+  .movie-detail {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar {
+    display: grid;
+  }
+}
