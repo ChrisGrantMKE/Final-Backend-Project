@@ -1,3 +1,7 @@
+if (process.env.USER || process.env.USERNAME) {
+  require("dotenv").config();
+}
+
 const { PORT = 5001 } = process.env;
 
 const app = require("./app");
